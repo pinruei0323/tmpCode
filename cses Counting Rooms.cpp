@@ -33,6 +33,7 @@ int main()
     f2(i, n)
         f2(j, m)    cin >> data[i][j];
     f2(i, n)
+    {
         f2(j, m)    dfs(0, 0, data, visited, ans);
     cout << ans;
 }
