@@ -19,5 +19,6 @@ using namespace std;
 int main()
 {
     ll n, m;
-    vector
+    vector <vector <char>> data(n, m);
+    
 }
