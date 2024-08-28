@@ -17,7 +17,13 @@
 using namespace std;
 
 void dfs(ll a, ll b, auto &data, auto &visited, ll &ans)
-
+{
+    if(visited[a][b]==0 && data[a][b]=='.')
+    {
+        ans++;
+    }
+    
+}
 
 int main()
 {
@@ -26,6 +32,7 @@ int main()
     vector <vector <bool>> visited(n, vector <bool> (m));
     f2(i, n)
         f2(j, m)    cin >> data[i][j];
-    dfs(0, 0, data, visited, ans);
+    f2(i, n)
+        f2(j, m)    dfs(0, 0, data, visited, ans);
     cout << ans;
 }
