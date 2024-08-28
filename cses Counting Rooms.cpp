@@ -16,9 +16,16 @@
 */
 using namespace std;
 
+void dfs(ll a, ll b, auto &data, auto &visited, ll &ans)
+
+
 int main()
 {
-    ll n, m;
+    ll n, m, ans=0;
     vector <vector <char>> data(n, m);
-    
+    vector <vector <bool>> visited(n, vector <bool> (m));
+    f2(i, n)
+        f2(j, m)    cin >> data[i][j];
+    dfs(0, 0, data, visited, ans);
+    cout << ans;
 }
