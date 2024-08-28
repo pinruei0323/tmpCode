@@ -20,7 +20,7 @@ void dfs(ll a, ll b, auto &data, auto &visited, ll &ans)
 {
     if(visited[a][b]==0 && data[a][b]=='.')
     {
-        ans++;
+        
     }
     
 }
