@@ -26,23 +26,11 @@ int main()    //    https://zerojudge.tw/ShowProblem?problemid=f607
     sort(&cut[0], &cut[n]);
     for(auto i : cut)
     {
-        auto r = upper_bound(begin(data), end(data), i.second);
-        bool flag = 1;
-        for(auto ptr=r; ptr!=begin(data); ptr--)
-        {
-            if(*ptr<i.second)
-            {
-                ans+=*r-*ptr;
-                data.insert(i.second);
-                flag = 0;
-                break;
-            }
-        }
-        if(flag)
-        {
-            ans+=*r-*begin(data);
-            data.insert(i.second);
-        }
+        auto tmp = upper_bound(begin(data), end(data), i.second);
+        auto r = tmp;
+        auto l = --tmp;
+        ans+=*r-*l;
+        data.insert(i.second);
     }
     cout << ans;
 }
