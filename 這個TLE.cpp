@@ -16,7 +16,7 @@
 */
 using namespace std;
 
-int main()    //https://zerojudge.tw/ShowProblem?problemid=f607
+int main()    //    https://zerojudge.tw/ShowProblem?problemid=f607
 {
     ll n, m, ans=0;
     cin >> n >> m;
@@ -26,13 +26,13 @@ int main()    //https://zerojudge.tw/ShowProblem?problemid=f607
     sort(&cut[0], &cut[n]);
     for(auto i : cut)
     {
-        ll r = *upper_bound(begin(data), end(data), i.second);
+        auto r = upper_bound(begin(data), end(data), i.second);
         bool flag = 1;
-        for(auto ptr=lower_bound(begin(data), end(data), i.second); ptr!=begin(data); ptr--)
+        for(auto ptr=r; ptr!=begin(data); ptr--)
         {
             if(*ptr<i.second)
             {
-                ans+=r-*ptr;
+                ans+=*r-*ptr;
                 data.insert(i.second);
                 flag = 0;
                 break;
@@ -40,7 +40,7 @@ int main()    //https://zerojudge.tw/ShowProblem?problemid=f607
         }
         if(flag)
         {
-            ans+=r-*begin(data);
+            ans+=*r-*begin(data);
             data.insert(i.second);
         }
     }
