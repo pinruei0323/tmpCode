@@ -26,9 +26,8 @@ int main()    //    https://zerojudge.tw/ShowProblem?problemid=f607
     sort(&cut[0], &cut[n]);
     for(auto i : cut)
     {
-        auto tmp = upper_bound(begin(data), end(data), i.second);
-        auto r = tmp;
-        auto l = --tmp;
+        auto l = upper_bound(begin(data), end(data), i.second);
+        auto r = l--;
         ans+=*r-*l;
         data.insert(i.second);
     }
